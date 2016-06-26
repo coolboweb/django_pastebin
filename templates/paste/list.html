@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for paste in all_paste %}
+        {{ paste.title }} - {{ paste.content }} - <a href="{% url 'show_paste' paste_id=paste.id %}">Show paste</a>  - <a href="{% url 'delete_paste' pk=paste.id %}">Delete paste</a>
+        </br>
+    {% endfor %}
+{% endblock %}
